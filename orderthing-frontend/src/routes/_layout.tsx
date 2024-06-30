@@ -19,10 +19,6 @@ export const Route = createFileRoute("/_layout")({
             checkAuthQueryOptions
         );
 
-        if (!isAuthenticated && window.location.pathname === "/staff") {
-            throw redirect({ to: "/staff/login" });
-        }
-
         if (!isAuthenticated) {
             throw redirect({ to: "/login" });
         }
