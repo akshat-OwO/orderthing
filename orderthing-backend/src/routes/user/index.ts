@@ -135,9 +135,17 @@ router.get("/cart", authenticateJwt, requireAuth, async (req, res) => {
 });
 
 router.get("/tables", authenticateJwt, requireAuth, async (req, res) => {
+    if (!req.user) {
+        return res.status(401).json({ message: "Unauthorized" });
+    }
+
+    const { id: userId } = req.user as SanitizedUser;
+
     try {
         const tables = await db.table.findMany({
-            where: { userId: null },
+            where: {
+                OR: [{ userId: null }, { userId }],
+            },
             orderBy: { number: "asc" },
             select: { id: true, number: true },
         });
