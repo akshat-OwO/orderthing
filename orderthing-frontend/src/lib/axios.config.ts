@@ -3,7 +3,7 @@ import axios from "axios";
 const axiosInstance = axios.create({
     baseURL: import.meta.env.DEV
         ? "http://localhost:8000"
-        : import.meta.env.SERVER_URL,
+        : "https://orderthing-server.up.railway.app",
     withCredentials: true,
 });
 
