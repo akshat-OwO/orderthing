@@ -15,7 +15,7 @@ export const Route = createRootRouteWithContext<{
             <Outlet />
             <ModalProvider />
             <Toaster />
-            <TanStackRouterDevtools />
+            {import.meta.env.DEV && <TanStackRouterDevtools />}
             <ReactQueryDevtools />
         </>
     ),
