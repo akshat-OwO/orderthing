@@ -154,7 +154,7 @@ const Navbar = () => {
                             </Link>
                             {auth.user?.role === "STAFF" && (
                                 <Link
-                                    to="/staff"
+                                    to="/staff/users"
                                     className={cn(
                                         buttonVariants({
                                             className: "justify-between",
