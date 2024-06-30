@@ -25,7 +25,7 @@ import { TTables } from "@/lib/schemas/table";
 import { useForm } from "react-hook-form";
 import { CheckoutSchema, TCheckoutSchema } from "@/lib/schemas/checkout";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem, FormLabel } from "../ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
 import {
     Select,
     SelectContent,
@@ -62,9 +62,6 @@ const CartModal = () => {
     const form = useForm<TCheckoutSchema>({
         mode: "onChange",
         resolver: zodResolver(CheckoutSchema),
-        defaultValues: {
-            tableNumber: 1,
-        },
     });
 
     const { mutate: checkout, isPending } = useMutation({
@@ -174,6 +171,7 @@ const CartModal = () => {
                                                 )}
                                             </SelectContent>
                                         </Select>
+                                        <FormMessage />
                                     </FormItem>
                                 )}
                             />

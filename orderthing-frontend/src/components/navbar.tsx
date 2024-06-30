@@ -86,8 +86,8 @@ const Navbar = () => {
                                 </Button>
                             </DrawerClose>
                         </div>
-                        <div className="px-5 pt-10 flex flex-col gap-5">
-                            <Avatar className="self-center size-48">
+                        <div className="px-5 pt-5 flex flex-col gap-5">
+                            <Avatar className="self-center size-40">
                                 <AvatarFallback className="bg-transparent">
                                     <UserCircle className="size-full" />
                                 </AvatarFallback>
